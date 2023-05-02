@@ -1,0 +1,18 @@
+pre {
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 2%;
+    
+}
+
+span.line, %sl {
+    font-family: "Source Sans Pro";
+    line-break: anywhere;
+    white-space: normal;
+    font-size: 20px;
+
+    & > * {
+        @extend %sl;
+    }
+}

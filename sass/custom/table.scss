@@ -1,0 +1,33 @@
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-family: Roboto;
+  font-size: 20px;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+thead {
+  // background: var(--container);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  padding: 12px 15px;
+
+  &:nth-of-type(even) {
+    background-color: var(--container);
+  }
+}
+
+tr {
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 12px 15px;
+  &:nth-of-type(even) {
+    background-color: var(--container);
+  }
+}

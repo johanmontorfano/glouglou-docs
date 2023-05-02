@@ -1,0 +1,10 @@
+@import "../docs//fonts.scss";
+
+ul {
+    padding: 2%;
+}
+
+li {
+    @extend p;
+    margin-top: 1px;
+}

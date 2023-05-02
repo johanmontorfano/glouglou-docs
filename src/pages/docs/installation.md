@@ -10,6 +10,6 @@ layout: ../../../layouts/documentation.astro
 <hr>
 <br>
 
-To install GlouGlou, <a href="">download the executable from GitHub</a> (available for Windows and Linux). You'll just need to put it on the directory of your choice.
+To install GlouGlou, <a href="https://github.com/franndjoo/glouglou/">download the executable from GitHub</a> (available for Windows and Linux). You'll just need to put it on the directory of your choice.
 
 Choose the directory you'll use carefully as GlouGlou creates/needs a bunch of file it generates to work properly.

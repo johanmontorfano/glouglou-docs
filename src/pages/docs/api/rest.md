@@ -25,7 +25,7 @@ The typical response for this route contains only the result code. If the email 
 ### Request
 
 ```
-POST /send?api-key={api-key}&to={to}&subject={subject}&body={body}
+GET /send?api-key={api-key}&to={to}&subject={subject}&body={body}
 ```
 
 <br>

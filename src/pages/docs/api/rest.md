@@ -19,13 +19,16 @@ The `/send` route is used to send an email. The route accepts the following quer
 - `to`: the email address of the recipient (required)
 - `subject`: the subject of the email (required)
 - `body`: the body of the email (required)
+- `cc`: a cc'ed recipient (optionnal)
+
+The `to` and `cc` attributes has to be formatted the following way: `Recipient <Email>`
 
 The typical response for this route contains only the result code. If the email failed to send, the reason for the failure is included in the response's status code.
 
 ### Request
 
 ```
-GET /send?api-key={api-key}&to={to}&subject={subject}&body={body}
+GET /send?api-key={api-key}&to={to}&subject={subject}&body={body}&cc={cc}
 ```
 
 <br>

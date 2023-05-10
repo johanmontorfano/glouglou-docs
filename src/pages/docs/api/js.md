@@ -65,6 +65,10 @@ export interface Email {
         name: string,
         email: string
     },
+    cc?: {
+        name: string,
+        email: string
+    },
     subject: string,
     body: string
 }
@@ -77,6 +81,9 @@ export interface Email {
 * `recipient` - An object that represents the recipient of the email. It has two properties:
   * `name` - A string that represents the name of the recipient.
   * `email` - A string that represents the email address of the recipient.
+* `cc` - An object that represents the cc'ed of the email. It has two properties:
+  * `name` - A string that represents the name of the cc'ed.
+  * `email` - A string that represents the email address of the cc'ed.
 * `subject` - A string that represents the subject of the email.
 * `body` - A string that represents the body of the email.
 

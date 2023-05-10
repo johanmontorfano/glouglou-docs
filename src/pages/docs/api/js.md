@@ -6,7 +6,7 @@ layout: ../../../../layouts/documentation.astro
 # Javascript API Documentation
 <br>
 
-The Javascript API is a `types` enabled API used to communicate with a GlouGlou instance through a set of easy to use functions.
+The Javascript API is a `types` enabled API used to communicate with a GlouGlou instance through a set of easy to use functions. Install it with your favorite NPM-based package manager, the pacakge name is `@johanmnto/glougloujs`
 
 <br>
 <h2 style="color: var(--accent);">Configuration</h2>

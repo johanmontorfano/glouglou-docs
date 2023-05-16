@@ -5,7 +5,7 @@ specifiers:
   '@motionone/solid': ^10.16.0
   astro: ^2.3.1
   sass: ^1.62.1
-  solid-js: ^1.4.3
+  solid-js: ^1.7.3
 
 dependencies:
   '@astrojs/solid-js': 2.1.0_solid-js@1.7.3

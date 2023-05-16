@@ -1,0 +1,44 @@
+---
+interface Props {
+  delay?: number;
+  method?: string;
+}
+
+const { delay = 450, method = "fade" } = Astro.props;
+---
+
+<div
+  style={"opacity: 0;" +
+    (method === "bottom" ? "transform: translateY(2px)" : "")}
+  appear-div
+  data-transition-method={method}
+  data-delay={delay}
+>
+  <slot />
+</div>
+
+<script>
+  const appears = document.querySelectorAll("[appear-div]");
+
+  appears.forEach((el) => {
+    const transitionMethod: "fade" | "bottom" | "top" =
+      el.attributes.getNamedItem("data-transition-method")?.nodeValue as any;
+    setTimeout(
+      () =>
+        el.animate(
+          [
+            {
+              opacity: 0,
+              transform:
+                transitionMethod !== "fade"
+                  ? `translateY(^${transitionMethod === "top" ? "" : "-"}2px)`
+                  : 0,
+            },
+            { opacity: 1, transform: "translateY(0px)" },
+          ],
+          { fill: "forwards", duration: 200 }
+        ),
+      parseInt(el.attributes.getNamedItem("data-delay")?.nodeValue || "450")
+    );
+  });
+</script>

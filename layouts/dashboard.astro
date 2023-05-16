@@ -1,0 +1,35 @@
+---
+import "../sass/shared/fonts.scss";
+import "../sass/shared/global.scss";
+import "../sass/shared/placers.scss";
+import "../sass/shared/svg.scss";
+import "../sass/custom/button.scss";
+import "../sass/custom/bar.scss";
+
+import GlouglouIcon from "../assets/icon.svg.astro";
+import Appear from "../components/appear.astro";
+
+const { title } = Astro.props.content;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="bar">
+      <p class="bar-title">GLOUGLOU</p>
+      <div class="content">
+        <a href="/docs" class="no-style">Docs</a>
+        <a href="https://github.com/franndjoo/glouglou" class="no-style"
+          >Download</a
+        >
+      </div>
+      <div class="bar-account">
+        <GlouglouIcon width="40" height="40" class="fill-fill" />
+      </div>
+    </div>
+    <slot />
+  </body>
+</html>

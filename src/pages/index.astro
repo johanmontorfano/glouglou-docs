@@ -1,27 +1,40 @@
 ---
-import "../../sass/shared/global.scss";
-import "../../sass/shared/fonts.scss";
-import "../../sass/custom/button.scss";
+import Appear from "../../components/appear.astro";
+import DashboardLayout from "../../layouts/dashboard.astro";
 ---
 
-<meta charset="utf-8" />
-<div
-  style="width: calc(100% - 4rem); height: calc(100vh - 4rem); padding: 2rem; display: flex; flex-direction: column; justify-content: flex-end;"
->
-  <div>
-    <h1>GlouGlou</h1>
-    <p>Programatically send emails from your code.</p>
-  </div>
-  <br />
-  <div style="display: flex;">
-    <a href="/docs" class="no-style">
-      <div class="button">📜 Documentation (Self-hosted)</div>
-    </a>
-    <div class="button disabled" style="margin-left: 10px;">
-      💽 Get started (Hosted)
+<DashboardLayout content={{ title: "Glouglou" }}>
+  <div
+    style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;"
+  >
+    <h1 style="display: flex;">
+      {
+        "Send emails from your code".split(" ").map((w, i) => (
+          <Appear delay={250 + 50 * i} method="bottom">
+            <span style="all: inherit; padding-right: 10px">{w}</span>
+          </Appear>
+        ))
+      }
+    </h1>
+    <br />
+    <Appear method="bottom" delay={500}>
+      <div style="display: flex">
+        <a href="/docs" class="no-style">
+          <div class="button" style="margin-right: 20px; --accent: green;">
+            Get started
+          </div>
+        </a>
+        <!-- <a href="/dashboard" class="no-style"> -->
+        <div class="button disabled">Deploy serverless</div>
+        <!-- </a> -->
+      </div>
+    </Appear>
+    <br />
+    <Appear method="bottom" delay={650}>
+      <p class="tiny">Serverless deploy will be available later this year.</p>
+    </Appear>
+    <div style={{ display: "flex" }}>
+      
     </div>
-    <a href="https://github.com/franndjoo/glouglou/" class="no-style">
-      <div class="button" style="margin-left: 10px;">💾 Download</div></a
-    >
   </div>
-</div>
+</DashboardLayout>

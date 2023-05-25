@@ -20,7 +20,7 @@ The `/send` route is used to send an email. The route accepts the following quer
 - `subject`: the subject of the email (required)
 - `body`: the body of the email (required)
 - `cc`: a cc'ed recipient (optionnal)
-- `name`: the name to use to send the email (required)
+- `from-name`: the name to use to send the email (required)
 
 The `to` and `cc` attributes has to be formatted the following way: `Recipient <Email>`
 
@@ -29,7 +29,7 @@ The typical response for this route contains only the result code. If the email 
 ### Request
 
 ```
-GET /send?api-key={api-key}&to={to}&subject={subject}&body={body}&cc={cc}&name={name}
+GET /send?api-key={api-key}&to={to}&subject={subject}&body={body}&cc={cc}&from-name={from-name}
 ```
 
 <br>

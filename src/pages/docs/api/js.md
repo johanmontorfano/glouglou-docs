@@ -70,7 +70,8 @@ export interface Email {
         email: string
     },
     subject: string,
-    body: string
+    body: string,
+    fromName: string
 }
 ```
 
@@ -86,6 +87,7 @@ export interface Email {
   * `email` - A string that represents the email address of the cc'ed.
 * `subject` - A string that represents the subject of the email.
 * `body` - A string that represents the body of the email.
+* `fromName` - A string that represents the name to use to send this email.
 
 <br>
 <br>
@@ -93,24 +95,6 @@ export interface Email {
 <hr>
 
 The `sendEmail()` function is a TypeScript function used to send an email via the GlouGlou Javascript API. This function takes in a `Configuration` object and an `Email` object as arguments and returns a promise that resolves with the response data from the API.
-
-<br>
-<h4 style="color: var(--accent);">Description</h4>
-<hr>
-
-The `sendEmail()` function is defined as follows:
-
-```typescript
-export async function sendEmail(config: Configuration, email: Email) {
-    const composedURL = composeURL(config, "send", {
-        "api-key": config.apiKey,
-        "to": `${email.recipient.name} <${email.recipient.email}>`,
-        "subject": email.subject,
-        "body": email.body
-    });
-    return await sendRequest(composedURL);
-}
-```
 
 <br>
 <h4 style="color: var(--accent);">Parameters</h4>
@@ -126,19 +110,6 @@ export async function sendEmail(config: Configuration, email: Email) {
 <br>
 
 The `verifyAPIKey()` function is used to verify the validity of a given API key via the GlouGlou Javascript API. This function takes in a `Configuration` object as an argument and returns a promise that resolves with the response data from the API.
-
-<br>
-<h4 style="color: var(--accent);">Function description</h4>
-<hr>
-
-The `verifyAPIKey()` function is defined as follows:
-
-```typescript
-export async function verifyAPIKey(config: Configuration) {
-    const composedURL = composeURL(config, "access-ok", { "api-key": config.apiKey });
-    return await sendRequest(composedURL);
-}
-```
 
 <br>
 <h4 style="color: var(--accent);">Parameters</h4>

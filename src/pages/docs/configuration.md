@@ -72,7 +72,6 @@ To send emails, the GlouGlou instance will have to be granted access to an email
 | `password` | `String` | No        | The password to access this email address, please take in consideration that some email providers (Gmail, iCloud, ...) only allows third-party services to connect via an application password. |
 | `host`     | `String` | No        | GlouGlou only support SMTP connections, please provide your email provider SMTP domain such as `smtp.xyz.com`                                                                                   |
 | `port`     | `u32`    | No        | The port opened for incoming SMTP requests by your email provider, it's often `587`                                                                                                             |
-| `name`     | `String` | No        | The name you want to use when sending emails that people will see on their inbox.                                                                                                               |
 
 <br>
 
@@ -84,5 +83,4 @@ address = "abc@xyz.com"
 password = "example123"
 host = "smtp.xyz.com"
 port = 587
-name = "ABC from xyz.com"
 ```

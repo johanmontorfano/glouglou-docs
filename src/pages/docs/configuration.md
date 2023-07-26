@@ -38,25 +38,12 @@ It's recommended to have a minimal understanding of how Toml works before contin
 <hr>
 
 Every configuration that concerns the server is set under the `server` table, there is below the attributes used for the server configuration.
+You can see that GlouGlou doesn't support HTTPS at all. However, this limitation will be overcame. Until an update for HTTPS support is release, you can try to find other solutions to use GlouGlou as an HTTPS service, one of them is using the [Efficient Progammed Router (EPR)](https://github.com/franndjoo/epr-go).
 
 | Attribute         | Type   | Optionnal | Description                               |
 | ----------------- | ------ | --------- | ----------------------------------------- |
 | `http_port`       | `u16`  | No        | The port used by the HTTP server.         |
-| `https_port`      | `u16`  | Yes       | The port used by the HTTPS server.        |
-| `https_cert_path` | String | Yes       | The certificate used by the HTTPS server. |
-| `https_key_path`  | String | Yes       | The key paired with the certificate.      |
 
-<br>
-
-Considering this, a fully configured GlouGlou instance server should look like the following:
-
-```toml
-[server]
-http_port = 3000
-https_port = 5000
-https_cert_path = "path/to/cert"
-https_key_path = "path/to/key"
-```
 
 <br>
 <br>
@@ -84,3 +71,31 @@ password = "example123"
 host = "smtp.xyz.com"
 port = 587
 ```
+
+<br>
+<br>
+
+<h3 style="color: var(--accent); opacity: .9;">DKIM configuration</h3>
+
+Nowadays, emails are the best way for anyone to reach out to people. Sadly, there are a lot of spammers, hackers, etc... who targets emails transactions. That's why we came up with the DKIM standard, which is used to certify an email hasn't been opened nor modified when going from the sender to the recipient. DKIM acts as a sealed enveloppe.
+
+You can add a DKIM configuration to GlouGlou, it will be used to encrypt emails and sign them.
+
+| Attribute          | Type   | Optional | Description                                                                      |
+|--------------------|--------|----------|----------------------------------------------------------------------------------|
+| `domain`           | String | no       | Domain targeted by the DKIM key pair.                                            |
+| `selector`         | String | no       | The selector the DKIM key pair is stored under.                                  |
+| `private_key_path` | String | no       | Path to the DKIM RSA private key.                                                |
+| `expiration`       | u32    | no       | You can set this to 0, and don't bother with this value, it will go away sooner. |
+
+Such a configuration should be stored under the `dkim` table. There is an example of a TOML DKIM configuration:
+
+```toml
+[dkim]
+domain = "abc.xyz"
+selector = "gg1main"
+private_key_path = "/path/to/key"
+expiration = 0
+```
+
+
